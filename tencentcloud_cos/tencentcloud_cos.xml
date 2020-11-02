@@ -107,4 +107,9 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Tencentcloud Cos Update">
+			https://github.com/Tencent-Cloud-Plugins/tencentcloud-joomla-plugin-cos
+		</server>
+	</updateservers>
 </extension>
