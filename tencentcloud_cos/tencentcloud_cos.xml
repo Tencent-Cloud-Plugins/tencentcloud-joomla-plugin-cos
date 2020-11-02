@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+	<name>plg_content_tencentcloud_cos</name>
+	<version>3.0.0</version>
+	<creationDate>October 2020</creationDate>
+	<author>Tencent</author>
+	<authorEmail>tencent@tencent.com</authorEmail>
+	<authorUrl>www.tencent.com</authorUrl>
+	<copyright>Copyright (C) 2020 Tencent Cloud.</copyright>
+	<license>Apache 2</license>
+	<description>PLG_CONTENT_TENCENTCLOUD_COS_DESCRIPTION</description>
+	<files>
+		<filename plugin="tencentcloud_cos">tencentcloud_cos.php</filename>
+		<filename>TencentcloudCosAction.php</filename>
+		<folder>vendor</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_tencentcloud_cos.ini</language>
+		<language tag="en-GB">en-GB.plg_content_tencentcloud_cos.sys.ini</language>
+		<language tag="zh-CN">zh-CN.plg_content_tencentcloud_cos.ini</language>
+		<language tag="zh-CN">zh-CN.plg_content_tencentcloud_cos.sys.ini</language>
+	</languages>
+	<scriptfile>script.php</scriptfile>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="secret_id"
+						type="password"
+						label="PLG_CONTENT_TENCENTCLOUD_COS_SECRET_ID"
+						description="PLG_CONTENT_TENCENTCLOUD_COS_SECRET_ID_DESC"
+						default=""
+						required="true"
+						filter="string"
+						size="100"
+						class="input-xxlarge"
+				/>
+				<field
+						name="secret_key"
+						type="password"
+						label="PLG_CONTENT_TENCENTCLOUD_COS_SECRET_KEY"
+						description="PLG_CONTENT_TENCENTCLOUD_COS_SECRET_KEY_DESC"
+						default=""
+						required="true"
+						filter="string"
+						size="100"
+						class="input-xxlarge"
+				/>
+
+				<field
+						name="region"
+						type="list"
+						label="PLG_CONTENT_TENCENTCLOUD_COS_REGION_ID"
+						description="PLG_CONTENT_TENCENTCLOUD_COS_REGIO_ID_DESC"
+						default=""
+						required="true"
+						filter="string"
+						size="100"
+						class="input-xxlarge"
+				>
+					<option value="">PLG_CONTENT_TENCENTCLOUD_COS_REGION</option>
+					<option value="ap-beijing-1" >PLG_CONTENT_TENCENTCLOUD_COS_BEIJIN_ONE</option>
+					<option value="ap-beijing" >PLG_CONTENT_TENCENTCLOUD_COS_BEIJIN</option>
+					<option value="ap-nanjing" >PLG_CONTENT_TENCENTCLOUD_COS_NANJING</option>
+					<option value="ap-shanghai" >PLG_CONTENT_TENCENTCLOUD_COS_SHANGHAI</option>
+					<option value="ap-guangzhou" >PLG_CONTENT_TENCENTCLOUD_COS_GUANGZHOU</option>
+					<option value="ap-chengdu" >PLG_CONTENT_TENCENTCLOUD_COS_CHENGDU</option>
+					<option value="ap-chongqing" >PLG_CONTENT_TENCENTCLOUD_COS_CHONGQING</option>
+					<option value="ap-shenzhen-fsi" >PLG_CONTENT_TENCENTCLOUD_COS_SHENZHEN_FSI</option>
+					<option value="ap-shanghai-fsi" >PLG_CONTENT_TENCENTCLOUD_COS_SHANGHAI_FSI</option>
+					<option value="ap-beijing-fsi" >PLG_CONTENT_TENCENTCLOUD_COS_BEIJING_FSI</option>
+					<option value="ap-hongkong" >PLG_CONTENT_TENCENTCLOUD_COS_HONGKONG</option>
+					<option value="ap-singapore" >PLG_CONTENT_TENCENTCLOUD_COS_SINGAPORE</option>
+					<option value="ap-mumbai" >PLG_CONTENT_TENCENTCLOUD_COS_MUMBAI</option>
+					<option value="ap-seoul" >PLG_CONTENT_TENCENTCLOUD_COS_SEOUL</option>
+					<option value="ap-bangkok" >PLG_CONTENT_TENCENTCLOUD_COS_BANGKOK</option>
+					<option value="ap-tokyo" >PLG_CONTENT_TENCENTCLOUD_COS_TOKEY</option>
+					<option value="na-siliconvalley" >PLG_CONTENT_TENCENTCLOUD_COS_SILICONVALLY</option>
+					<option value="na-ashburn" >PLG_CONTENT_TENCENTCLOUD_COS_ASHBURN</option>
+					<option value="na-toronto" >PLG_CONTENT_TENCENTCLOUD_COS_TORONTO</option>
+					<option value="eu-frankfurt" >PLG_CONTENT_TENCENTCLOUD_COS_FRANKFURT</option>
+					<option value="eu-moscow" >PLG_CONTENT_TENCENTCLOUD_COS_MOSCOW</option>
+				</field>
+
+				<field
+						name="bucket"
+						type="text"
+						label="PLG_CONTENT_TENCENTCLOUD_COS_BUCKET_ID"
+						description="PLG_CONTENT_TENCENTCLOUD_COS_BUCKET_DESC"
+						default=""
+						required="true"
+						filter="string"
+						size="100"
+						class="input-xxlarge"
+				/>
+				<field
+						name="remote_url"
+						type="text"
+						label="PLG_CONTENT_TENCENTCLOUD_COS_URL_ID"
+						description="PLG_CONTENT_TENCENTCLOUD_COS_URL_DESC"
+						default=""
+						required="true"
+						filter="string"
+						size="100"
+						class="input-xxlarge"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
