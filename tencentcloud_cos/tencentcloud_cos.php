@@ -47,7 +47,7 @@ class PlgContentTencentcloud_cos extends JPlugin
     public function onContentAfterSave($context, $article, $isNew)
     {
         if ($context === 'com_media.file') {
-            $tencent_cos = new TencentcloudImsAction();
+            $tencent_cos = new TencentcloudCosAction();
             $cos_file_path = $this->getUploadFilePath($article);
             if (empty($cos_file_path)) {
                 return;
@@ -76,7 +76,7 @@ class PlgContentTencentcloud_cos extends JPlugin
                 return;
             }
             $drop_files[] = array('Key' => $cos_file_path);
-            $tencent_cos = new TencentcloudImsAction();
+            $tencent_cos = new TencentcloudCosAction();
             $tencent_cos->deleteRemoteAttachment($drop_files);
         }
         return;
@@ -97,7 +97,7 @@ class PlgContentTencentcloud_cos extends JPlugin
     public function onContentPrepare($context, &$article, &$params, $page = 0)
     {
         if ($context === 'com_content.article' || $context === 'com_content.category') {
-            $cos_options = (new TencentcloudImsAction())->getCosOptions();
+            $cos_options = (new TencentcloudCosAction())->getCosOptions();
             if (empty($cos_options) || !isset($cos_options['remote_url'])) {
                 return;
             }

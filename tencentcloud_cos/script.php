@@ -37,7 +37,7 @@ class PlgContentTencentcloud_cosInstallerScript
     public function __construct()
     {
         $this->db = JFactory::getDbo();
-        $this->cos_object = new TencentcloudImsAction();
+        $this->cos_object = new TencentcloudCosAction();
     }
 
     /**
