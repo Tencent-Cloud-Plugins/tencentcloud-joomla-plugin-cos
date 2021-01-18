@@ -60,7 +60,10 @@ class PlgContentTencentcloud_cosInstallerScript
             //获取配置
             $conf = $this->cos_object->getSiteInfo();
             //如果没有腾讯配置，则认为是第一次安装,写入初始化配置
-            if (!$conf) $this->cos_object->setSiteInfo();
+
+            if (!$conf) {
+                $this->cos_object->setSiteInfo();
+            }
             $this->cos_object->report('activate');
             return true;
         } catch (RuntimeException $e) {

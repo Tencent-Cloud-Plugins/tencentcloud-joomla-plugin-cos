@@ -14,7 +14,7 @@
 | ---------- | ------------------------------------------------------------ |
 | 中文名称   | 腾讯云验证码（COS）插件                                  |
 | 英文名称   | tencentcloud-cos                                         |
-| 最新版本   | v1.0.0 (2020.10.29)                                          |
+| 最新版本   | v1.0.1 (2021.01.12)                                         |
 | 适用平台   | [Joomla](https://joomla.org/)                          |
 | 适用产品   | [腾讯云对象存储（COS）](https://cloud.tencent.com/product/cos) |
 | GitHub项目 | [tencentcloud-joomla-plugin-cos](https://github.com/Tencent-Cloud-Plugins/tencentcloud-joomla-plugin-cos) |
@@ -27,7 +27,7 @@
 - 开启插件后在后台的“内容管理“->“后台多媒体文件” 中上传的文件进行远程存储
 - 开启插件后在后台的“内容管理“->“后台多媒体文件” 中删除文件同时会删除远程文件
 - 创建博客并在博客中插入图片，图片会上传到远程存储中，在浏览博客的时候博客中的图片是从远程存储中加载的
-
+- 数据万象功能，给网站中的图片添加水印
 ## 3.安装指引
 
 ### 3.1.部署方式一：通过GitHub部署安装
@@ -54,6 +54,7 @@
 <br><br>
 ![](images/cos3.png)
 > 在【扩展管理】->【插件管理】中，选择腾讯云对象存储插件，配置插件需要的相关信息。 
+>自定义水印编写规则参考 [数据万象官网](https://cloud.tencent.com/document/product/460) 的API文档。
 
 <br><br>
 ![](images/cos4.png)
@@ -66,6 +67,7 @@
 - **所属地域**：在腾讯云服务器所在地域。详情参考[腾讯云文档](https://cloud.tencent.com/document/product/457/44232)
 - **空间名称**：COS服务中存储桶的名称。详情参考[腾讯云文档](https://cloud.tencent.com/document/product/436/41153)
 - **访问域名**：存储桶的访问域名。详情参考[腾讯云文档](https://cloud.tencent.com/document/product/436/6224)
+- **数据万象**：开启数据万象对图片进行编辑，压缩、转换格式、水印添加等操作。详情参考[腾讯云文档](https://cloud.tencent.com/document/product/460/36540)
 
 ## 5.FAQ
 - **问题1**：开启腾讯云对象存储后，之前图片无法正常显示？
@@ -83,12 +85,14 @@
 
 ## 6.GitHub版本迭代记录
 
-### 6.1 tencentcloud-joomla-plugin-cos v1.0.0
+### 2021-01-12 tencentcloud-joomla-plugin-cos v1.0.1
+- 数据万象功能，给网站中的图片添加水印
+
+### 2020-10-29 tencentcloud-joomla-plugin-cos v1.0.0
 
 - 开启插件后在后台的“内容管理“->“后台多媒体文件” 中上传的文件进行远程存储
 - 开启插件后在后台的“内容管理“->“后台多媒体文件” 中删除文件同时会删除远程文件
 - 创建博客并在博客中插入图片，图片会上传到远程存储中，在浏览博客的时候博客中的图片是从远程存储中加载的
-
 ---
 
 本项目由腾讯云中小企业产品中心建设和维护，了解与该插件使用相关的更多信息，请访问[春雨文档中心](https://openapp.qq.com/docs/Joomla/cos.html) 

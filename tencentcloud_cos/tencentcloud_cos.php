@@ -127,9 +127,18 @@ class PlgContentTencentcloud_cos extends JPlugin
         preg_match_all('/<a[^>]+href=([\'"])(?<href>.+?)\1[^>]*>/i', $text, $hrefResult);
         preg_match_all('/<img[^>]+src=([\'"])(?<src>.+?)\1[^>]*>/i', $text, $srcResult);
         $result = array_merge($hrefResult['href'], $srcResult['src']);
+        if (empty($result)) {
+            return $text;
+        }
 
+        $ciUrl = (new TencentcloudCosAction())->getCiRule();
         foreach ($result as $link) {
-            $text = str_replace($link, $cos_options['remote_url'] . "/" . ltrim($link, '/'), $text);
+            $replaceString = $cos_options['remote_url'] . "/" . ltrim($link, '/');
+            if (isset($cos_options['cloud_infinite']) && $cos_options['cloud_infinite'] === 1) {
+                $replaceString .= "?" . $ciUrl;
+            }
+
+            $text = str_replace($link, $replaceString, $text);
         }
         return $text;
     }
