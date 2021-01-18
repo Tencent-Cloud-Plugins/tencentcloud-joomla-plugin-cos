@@ -22,6 +22,8 @@ require_once 'vendor/autoload.php';
 
 class TencentcloudCosAction
 {
+    const DEFAULT_CI_RULE = 'watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45';
+
     /**
      * db
      * @var JDatabaseDriver|null
@@ -55,6 +57,7 @@ class TencentcloudCosAction
     private $secret_key;
     private $region;
     private $bucket;
+    private $ci_rule;
 
 
     /**
@@ -78,7 +81,22 @@ class TencentcloudCosAction
         $this->secret_key = isset($cos_options['secret_key']) ? $cos_options['secret_key'] : '';
         $this->region = isset($cos_options['region']) ? $cos_options['region'] : '';
         $this->bucket = isset($cos_options['bucket']) ? $cos_options['bucket'] : '';
+        if (isset($cos_options['cloud_infinite']) && $cos_options['cloud_infinite'] === 1) {
+            if (isset($cos_options['ci_rule']) && $cos_options['ci_rule'] !== '') {
+                $this->ci_rule = $cos_options['ci_rule'];
+            } else {
+                $this->ci_rule = self::DEFAULT_CI_RULE;
+            }
+        }
         return true;
+    }
+
+    /**
+     * 获取默认的数据万象规则
+     */
+    public function getCiRule()
+    {
+        return $this->ci_rule;
     }
 
     /**
